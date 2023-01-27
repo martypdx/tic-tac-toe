@@ -12,7 +12,7 @@ export default function Game({ children }) {
   const tie = !winner && !active;
 
   const playAt = (index) => {
-    if (board[index]) return;
+    if (!active || board[index]) return;
 
     setBoard((board) => {
       const newBoard = board.slice();
